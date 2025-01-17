@@ -1,4 +1,4 @@
-/* General Reset */
+
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +12,7 @@ body {
     line-height: 1.5;
 }
 
-/* Bookmark */
+
 header {
     position: absolute;
     background-color: #f7c8d5;
@@ -72,9 +72,8 @@ header::after {
     z-index: -1;
 }
 
-/* Book Recommendations Section */
 #book-list {
-    margin-top: 550px; /* Centers the book list below the header */
+    margin-top: 550px; 
     text-align: center;
 }
 
@@ -87,7 +86,7 @@ header::after {
     margin-bottom: 20px;
 }
 
-/* Masonry Grid for Book Items */
+
 .book-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -95,11 +94,10 @@ header::after {
     gap: 20px;
     padding: 20px;
     margin: 0 auto;
-    max-width: 1400px; /* Optional: Limit the grid's max width */
+    max-width: 1400px; 
     justify-items: center;
 }
 
-/* Book Card Styles */
 .book-card {
     background-color: #fff;
     border: 1px solid #ccc;
@@ -112,10 +110,10 @@ header::after {
     font-family: 'Arial', sans-serif;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     width: 100%;
-    max-width: 250px; /* Optional: To control card width */
+    max-width: 250px; 
 }
 
-/* Cover Image Styling */
+
 .book-card img {
     width: 100%;
     height: auto;
@@ -124,7 +122,7 @@ header::after {
     object-fit: cover;
 }
 
-/* Title and Author Styling */
+
 .book-card h2 {
     font-size: 1rem;
     font-weight: bold;
@@ -139,13 +137,12 @@ header::after {
     text-align: center;
 }
 
-/* Hover Effects */
 .book-card:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Footer Styles */
+
 footer {
     text-align: center;
     padding: 20px;
