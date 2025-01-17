@@ -1,0 +1,184 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #bbf3a4;
+    color: #000000;
+    line-height: 1.5;
+}
+
+/* Bookmark */
+header {
+    position: absolute;
+    background-color: #f7c8d5;
+    width: 250px; 
+    height: 500px;
+    left: 20px; 
+    top: 20px; 
+    padding: 30px 20px;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), 50% 100%, 0 calc(100% - 30px));
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    border: 2px solid #6e4b3a;
+    z-index: 10; 
+}
+
+header h1 {
+    font-family: 'Brush Script MT', Brush Script Std, cursive;
+    font-size: 2rem; 
+    font-style: bold;
+    font-weight: 900;
+    margin-bottom: 15px;
+    color: rgb(240, 167, 179);
+    text-shadow: -1px 0 rgb(102, 61, 21), 0 -1px rgb(102, 61, 21), 1px 0 rgb(102, 74, 14), 0 -2px rgb(104, 80, 16);
+    padding: 10px;
+    width: 100%;
+}
+
+header h1 a {
+    text-decoration: none;
+    color: inherit;
+    padding-bottom: 5px;
+    transition: border-color 0.3s ease; 
+}
+
+header h1 a:hover {
+    border-bottom: 3px solid rgb(240, 167, 179); 
+}
+
+header p {
+    font-size: 1rem;
+    font-family:  Snell Roundhand, cursive;
+    color: #6e4b3a;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.3;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f7c8d5, #bbf3a4);
+    opacity: 0.2;
+    z-index: -1;
+}
+
+/* Book Recommendations Section */
+#book-list {
+    margin-top: 550px; /* Centers the book list below the header */
+    text-align: center;
+}
+
+#book-list h2 {
+    font-size: 1.2rem;
+    font-family: Marker Felt, fantasy;
+    font-weight: bold;
+    color: #6e5244;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/* Masonry Grid for Book Items */
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: auto;
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1400px; /* Optional: Limit the grid's max width */
+    justify-items: center;
+}
+
+/* Book Card Styles */
+.book-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 250px; /* Optional: To control card width */
+}
+
+/* Cover Image Styling */
+.book-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+/* Title and Author Styling */
+.book-card h2 {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 5px 0;
+    text-transform: uppercase;
+}
+
+.book-card p {
+    font-size: 0.9rem;
+    color: #333;
+    text-align: center;
+}
+
+/* Hover Effects */
+.book-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #a4d08c;
+    color: white;
+}
+
+
+#book-search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#book-search-form input {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#book-search-form button {
+    padding: 9px;
+    font-size: 1.2rem;
+    background-color: #d590b1c8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#book-search-form button:hover {
+    background-color: #08490d;
+}
