@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Novela Nonsense</title>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- BOOKMARK  -->
+      <header class="bookmark-header">
+        <div class="bookmark-content">
+          <h1><a href="/" id="home-link">Novela Nonsense</a></h1>
+          <p>
+            Finished the book and still hungry for more? 
+            Grab a pint of ice cream, unbuckle those pants, 
+            and dive back in — we're not here to judge, just to enable!
+          </p>
+        </div>
+      </header>
+
+      <main>
+        <!-- BOOK RECC DEFAULT BOOKS-->
+        <section id="book-list" class="book-list" aria-labelledby="book-list-heading">
+          <h2 id="book-list-heading">Book Recommendations</h2>
+          <ul id="book-items" class="book-list" role="list"></ul>
+        </section>
+
+        <!-- BOOK DETAILS -->
+        <section id="book-details" aria-labelledby="book-details-heading">
+          <h2 id="book-details-heading">Book Details</h2>
+          <div id="book-info"></div>
+        </section>
+
+        <!-- FORM FOR BOOK SEARCHES -->
+        <section id="search-form-section" aria-labelledby="search-form-heading">
+          <h2 id="search-form-heading">Don't see it? Search it up.</h2>
+          <form id="book-search-form" aria-label="Search for books">
+            <div>
+              <label for="search-query">Search by Title or Author</label>
+              <input 
+                type="text" 
+                id="search-query" 
+                name="query" 
+                placeholder="Ready to cry?" 
+                required 
+              />
+            </div>
+            <button type="submit" id="submit-button">Search</button>
+          </form>
+        </section>
+      </main>
+
+      <footer>
+        <p>Novela Nonsense © 2025</p>
+      </footer>
+    </div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
