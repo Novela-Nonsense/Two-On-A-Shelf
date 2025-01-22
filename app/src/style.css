@@ -12,48 +12,57 @@ body {
     position: relative;
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
 }
 
-header {
+#app {
+    display: flex;
+    width: 100%;
+}
+
+header.bookmark-header {
     background-color: #EBC3DB;
     width: 250px;
-    height: 400px;
+    height: 700px;
+    padding: 20px;
+    position: absolute;
     left: 20px;
     top: 20px;
-    padding: 30px 20px;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), 50% 100%, 0 calc(100% - 30px));
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
     text-align: center;
     border: 2px solid #7353BA;
     z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 30px;
+    overflow-y: auto;
 }
 
-header h1 {
+header.bookmark-header h1 {
     font-family: 'Brush Script MT', Brush Script Std, cursive;
     font-size: 2rem;
     font-style: bold;
     font-weight: 900;
     margin-bottom: 15px;
-    color: rgb(240, 167, 179);
+    color: rgb(186, 121, 183);
     text-shadow: -1px 0 rgb(102, 61, 21), 0 -1px rgb(102, 61, 21), 1px 0 rgb(102, 74, 14), 0 -2px rgb(104, 80, 16);
     padding: 10px;
     width: 100%;
+    
 }
 
-header h1 a {
+header.bookmark-header h1 a {
     text-decoration: none;
     color: inherit;
     padding-bottom: 5px;
     transition: border-color 0.3s ease;
 }
 
-header h1 a:hover {
-    border-bottom: 3px solid rgb(240, 167, 179);
+header.bookmark-header h1 a:hover {
+    border-bottom: 3px solid rgba(194, 130, 194, 0.681);
 }
 
-header p {
-    display: flex;
+header.bookmark-header p {
     font-size: 1rem;
     font-family: Snell Roundhand, cursive;
     color: #6e4b3a;
@@ -62,7 +71,79 @@ header p {
     line-height: 1.3;
 }
 
-header::after {
+header.bookmark-header .divider {
+    height: 1px;
+    background-color: #7353BA;
+    margin: 10px 0;
+}
+
+header.bookmark-header .floating-shelf {
+    position: relative;
+    padding: 15px;
+    background-color: #fff;
+    border: 2px solid #7353BA;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    z-index: 1;
+}
+
+header.bookmark-header .floating-shelf::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 10%;
+    width: 80%;
+    height: 5px;
+    background-color: #7353BA;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+header.bookmark-header #search-form-section {
+    padding: 20px;
+    margin-top: 20px;
+    border: 2px solid #8c7ea9;
+    border-radius: 10px;
+    background-color: #EBC3DB;
+}
+
+header.bookmark-header #search-form-section h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+header.bookmark-header #book-search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+header.bookmark-header #book-search-form input {
+    padding: 4px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+header.bookmark-header #book-search-form button {
+    padding: 11px 14px;
+    font-size: 1rem;
+    background-color: #d590b1c8;
+    color: white;
+    border: none;
+    border-radius: 30%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 90px;
+    height: 45px;
+}
+
+header.bookmark-header #book-search-form button:hover {
+    background-color: #08490d;
+}
+
+header.bookmark-header::after {
     content: "";
     position: absolute;
     top: 0;
@@ -74,23 +155,41 @@ header::after {
     z-index: -1;
 }
 
+.staircase-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    gap: 20px;
+    padding: 20px;
+    z-index: 5;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-left: 270px;
+}
+
 #book-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 30px; 
+    justify-content: center;
+    gap: 30px;
     padding-top: 20px;
     margin-top: 20px;
-    margin-left: 250px;
     z-index: 1;
     position: relative;
     background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
     background-repeat: repeat;
     border-radius: 10px;
     padding: 30px;
-    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3); 
-    border-top: 5px solid #4b3621; 
-    border-bottom: 5px solid #4b3621; 
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
+    border-top: 5px solid #4b3621;
+    border-bottom: 5px solid #4b3621;
 }
 
 .book-card {
@@ -140,71 +239,252 @@ header::after {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #a4d08c;
-    color: white;
-    margin-top: auto;  
+
+
+.image-container {
+    position: relative;
+    width: 50%; 
+    margin: auto;
 }
 
-#book-search-form {
+#sonny-angel-reading {
+    width: 100%; 
+    height: auto;
+    display: block;
+    position: relative;
+    border-radius: 10px;  
+}
+
+.eyes {
+    position: absolute;
+    top: 43%;  
+    left: 26%;  
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
+    gap: 30px;  
+    z-index: 2;
 }
 
-#book-search-form input {
-    padding: 8px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.left-eye, .right-eye {
+    width: 90px; 
+    height: auto;
+    position: relative;
+    border-radius: 50%; 
+    opacity: 0.9;  
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  
+    filter: blur(0.2px);  
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.2s ease-in-out; 
 }
 
-#book-search-form button {
-    padding: 11px 14px;
-    font-size: 1rem;
-    background-color: #d590b1c8;
-    color: white;
-    border: none;
-    border-radius: 30%;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 90px;
-    height: 45px;
+
+.left-eye, .right-eye {
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 40%, rgba(0, 0, 0, 0.2) 100%);  
 }
 
-#book-search-form button:hover {
-    background-color: #08490d;
+.left-eye {
+    animation-delay: 0s;  
+    top: -5%;  
+    left: -5%; 
+    animation: eyeRoll 1.5s ease-in-out infinite; 
+    transform-origin: center;  
 }
 
-.book-recommendations {
+.right-eye {
+    animation-delay: 0.2s;  
+    top: -5%;  
+    left: 13%;  
+    animation: eyeRoll 1.5s ease-in-out infinite; 
+    transform-origin: center;  
+}
+
+@keyframes eyeRoll {
+    0% {
+        transform: rotate(0deg);  
+    }
+    50% {
+        transform: rotate(40deg);  
+    }
+    100% {
+        transform: rotate(0deg);  
+    }
+}
+
+
+.popup {
+    display: none; 
     position: absolute;
-    top: 50px;  
-    left: 20px;
-    width: 250px;
-    z-index: 10;
-    font-size: 0.9rem;
-    text-align: left;
+    top: 30%; 
+    left: 105%; 
+    transform: translateY(-50%); 
+    color: rgb(37, 17, 39); 
+    font-style: italic;
+    font-family: emoji;
+    padding: 30px 40px; 
+    font-size: 3rem; 
+    border-radius: 10px;
+    text-align: left; 
+    z-index: 100; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    opacity: 0; 
+    transition: opacity 0.3s ease-in-out; 
 }
 
-.bookmark {
-    width: 150px;
-    height: 50px;
-    background-color: #7353BA;
-    color: #EDE3E9;
-    font-size: 14px;
-    position: absolute;
-    top: 50px;  
-    left: 30px;
-    border-radius: 10px 0 10px 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    padding: 10px;
-    text-align: left;
+.popup.show {
+    display: block; 
+    opacity: 2; 
 }
 
-.bookmark p {
-    margin: 0;
-    word-wrap: break-word;
+@media screen and (max-width: 768px) {
+    body {
+        flex-direction: column;
+        padding: 0 15px; 
+    }
+
+    header.bookmark-header {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 10px;
+    }
+
+    header.bookmark-header h1 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    header.bookmark-header p {
+        font-size: 0.9rem;
+    }
+
+    .staircase-container {
+        top: 120px;
+        left: 0;
+        gap: 10px;
+    }
+
+    main {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    #book-list {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .book-card {
+        width: 150px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .book-card h2 {
+        font-size: 0.8rem;
+        padding: 5px;
+    }
+
+    .book-card p {
+        font-size: 0.7rem;
+    }
+
+    .image-container {
+        width: 100%;
+        margin: auto;
+    }
+
+    #sonny-angel-reading {
+        width: 80%;
+        max-width: 200px;
+        margin: auto;
+    }
+
+    .eyes {
+        gap: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .left-eye, .right-eye {
+        width: 70px;
+        height: 70px;
+        transition: width 0.2s, height 0.2s;
+    }
+
+    .popup {
+        padding: 20px 25px;
+        font-size: 2rem;
+        top: 40%;
+        left: 80%;
+    }
+
+    #book-search-form input, 
+    #book-search-form button {
+        width: 100%;
+        font-size: 0.9rem;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header.bookmark-header {
+        padding: 15px;
+    }
+
+    .book-card {
+        width: 120px;
+    }
+
+    .book-card h2 {
+        font-size: 0.75rem;
+    }
+
+    .book-card p {
+        font-size: 0.6rem;
+    }
+
+    #sonny-angel-reading {
+        width: 70%;
+        max-width: 150px;
+    }
+
+    .eyes {
+        gap: 15px;
+    }
+
+    .left-eye, .right-eye {
+        width: 50px;
+        height: 50px;
+        transition: width 0.2s, height 0.2s;
+    }
+
+    .popup {
+        font-size: 1.8rem;
+        padding: 15px 20px;
+    }
+
+ 
+    #book-search-form input, 
+    #book-search-form button {
+        font-size: 0.8rem;
+        padding: 12px;
+        margin-bottom: 8px;
+    }
+
+    #book-search-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
 }

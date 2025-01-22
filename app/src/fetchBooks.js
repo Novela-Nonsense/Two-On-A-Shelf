@@ -21,10 +21,10 @@ export async function fetchBooks(query = '') {
       const title = work.title; 
       const author = work.authors ? work.authors[0]?.name : 'Unknown Author';
       const coverId = work.cover_id || work.cover_i;
-// IF NO BOOK COVER DONT SHOW ANYTHING
+// IF NO BOOK COVER placeholder
       const coverUrl = coverId
         ? `https://covers.openlibrary.org/b/id/${coverId}-M.jpg`
-        : null; 
+        : "https://dummyimage.com/150x220/cccccc/000000&text=No+Cover"; 
 
       return {
         title: title,
