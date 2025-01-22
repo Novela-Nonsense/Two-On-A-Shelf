@@ -12,29 +12,14 @@
       <!-- BOOKMARK  -->
       <header class="bookmark-header">
         <div class="bookmark-content">
-          <h1><a href="/" id="home-link">Novela Nonsense</a></h1>
+          <h1><a href="/" id="home-link">  Novela Nonsense  </a></h1>
           <p>
             Finished the book and still hungry for more? 
             Grab a pint of ice cream, unbuckle those pants, 
             and dive back in — we're not here to judge, just to enable!
           </p>
         </div>
-      </header>
-
-      <main>
-        <!-- BOOK RECC DEFAULT BOOKS-->
-        <section id="book-list" class="book-list" aria-labelledby="book-list-heading">
-          <h2 id="book-list-heading">Book Recommendations</h2>
-          <ul id="book-items" class="book-list" role="list"></ul>
-        </section>
-
-        <!-- BOOK DETAILS -->
-        <section id="book-details" aria-labelledby="book-details-heading">
-          <h2 id="book-details-heading">Book Details</h2>
-          <div id="book-info"></div>
-        </section>
-
-        <!-- FORM FOR BOOK SEARCHES -->
+        <!-- MOVED THE FORM BELOW THE DESCRIPTION IN HEADER -->
         <section id="search-form-section" aria-labelledby="search-form-heading">
           <h2 id="search-form-heading">Don't see it? Search it up.</h2>
           <form id="book-search-form" aria-label="Search for books">
@@ -51,11 +36,38 @@
             <button type="submit" id="submit-button">Search</button>
           </form>
         </section>
+      </header>
+
+      <main>
+       
+        <div class="image-container">
+          <img src="./src/H.png" alt="Sonny Angel reading a book" id="sonny-angel-reading" />
+          <div class="eyes">
+            <img src="./src/left.png" class="left-eye" alt="Left Eye" />
+            <img src="./src/right .png" class="right-eye" alt="Right Eye" />
+          </div>
+          <!-- Popup -->
+          <div class="popup" id="popupText"> "Oh brother"</div>
+        </div>
+        <dialog>
+          <h1>Details</h1>
+          <div>details</div>
+          <p>hello</p>
+        </dialog>
+        <!-- BOOK RECC DEFAULT BOOKS-->
+        <section id="book-list" class="book-list" aria-labelledby="book-list-heading">
+          <h2 id="book-list-heading"> ✿ Book Recommendations ✿ </h2>
+          <ul id="book-items" class="book-list" role="list"></ul>
+        </section>
+
+        <!-- BOOK DETAILS -->
+        <section id="book-details" aria-labelledby="book-details-heading">
+          <h2 id="book-details-heading">Book Case</h2>
+          <div id="book-info"></div>
+        </section>
       </main>
 
-      <footer>
-        <p>Novela Nonsense © 2025</p>
-      </footer>
+     
     </div>
     <script type="module" src="./src/main.js"></script>
   </body>
