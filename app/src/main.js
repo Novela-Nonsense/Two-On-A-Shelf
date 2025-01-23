@@ -39,3 +39,19 @@ bookSearchForm.addEventListener('submit', function (event) {
     renderBooks(query); 
   }
 });
+
+// pop up text dialog
+const popup = document.getElementById('popupText');
+const eyes = document.querySelectorAll('.left-eye, .right-eye');
+
+
+function triggerPopup() {
+    setTimeout(() => {
+        popup.classList.add('show'); 
+    }, 1500);  
+}
+
+
+eyes.forEach(eye => {
+    eye.addEventListener('animationiteration', triggerPopup);  
+});
