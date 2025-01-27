@@ -30,7 +30,7 @@ const dialog = document.getElementById('dia');
    start.textContent = `Start Date: ${wholeData.started}`; 
    
    const end = document.createElement('p')
-   end.textContent = `Start Date: ${wholeData.ending}`;
+   end.textContent = `End Date: ${wholeData.ending}`;
    
    const sum = document.createElement('p')
    sum.innerHTML = `Summary: ${wholeData.summary}`;
