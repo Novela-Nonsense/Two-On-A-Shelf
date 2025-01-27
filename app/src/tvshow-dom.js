@@ -13,7 +13,7 @@ const dialog = document.getElementById('dia');
    const list = document.createElement('ul')
    
    const img = document.createElement('img')
-   img.alt = `An old cover of ${wholeData.show}`
+   img.alt = `An old cover of ${wholeData.title}`
    img.src = wholeData.coverUrl; 
    img.id = "image"
    

@@ -488,3 +488,42 @@ main {
         gap: 10px;
     }
 }
+
+dialog {
+  max-width: 75%;
+  /* background-color: grey; */
+  background-color: #BDEDE0;
+  margin: auto;
+  min-height: 300px;
+  max-height: 800px;
+  font-size: 14px;
+  z-index: 0;
+}
+
+dialog p{
+    color: black;
+    text-align: center;
+}
+
+dialog h1{
+    color: black;
+    text-align: center;
+}
+
+#image{ 
+    display: block;
+    margin: 0 auto;
+}
+audio{
+    position: relative;
+    width: 215px;
+    height: 300px;
+}
+/* 
+@keyframes shift{
+    0%{
+        transform: translateX(10%) translateY(10%) ;
+    } 100%{
+        transform: translateX(-10%) translateY(-10%)
+    }
+}  */
